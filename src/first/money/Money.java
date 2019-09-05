@@ -1,7 +1,15 @@
 package first.money;
 
-public class Money {
+public abstract class Money {
     protected int amount;
+
+    public static Dollar dollar(int amount) {
+        return new Dollar(amount);
+    }
+
+    public static Franc franc(int amount) {
+        return new Franc(amount);
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -9,4 +17,6 @@ public class Money {
         return money.amount == this.amount
                 && getClass().equals(money.getClass());
     }
+
+    abstract Money times(int multiplier);
 }
