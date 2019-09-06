@@ -4,12 +4,13 @@ import java.util.Objects;
 
 public class Franc extends Money{
 
-    public Franc(int amount) {
-        this.amount = amount;
+    public Franc(int amount, String currency) {
+        super(amount,currency);
     }
 
-    Money times(int multiplier){
-        return new Franc(this.amount * multiplier);
+    @Override
+    public String currency() {
+        return currency;
     }
 
     @Override
@@ -19,6 +20,6 @@ public class Franc extends Money{
 
     @Override
     public String toString() {
-        return "Dollar : "+amount;
+        return "Franc : "+amount;
     }
 }
