@@ -1,5 +1,9 @@
 package first.money;
 
 public interface Expression {
-    Money reduce(String to);
+    Money reduce(Bank bank, String to);
+
+    Expression plus(Expression expression);
+
+    Expression times(int multiplier);
 }
